@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.example.powen.myforecast.ResultActivity"
+        tools:showIn="@layout/activity_result">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="More Details"
+            android:id="@+id/button"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:onClick="toDetail"
+            android:textSize="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    <Button
+        android:text="  View Map  "
+        android:id="@+id/button3"
+        android:textSize="10dp"
+        android:onClick="toMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"/>
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:src="@drawable/fb_icon"
+            android:scaleType="fitXY"
+            android:background="#00ffffff"
+            android:onClick="toShare"
+            android:layout_width="@android:dimen/app_icon_size"
+            android:layout_height="@android:dimen/app_icon_size"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageView
+        android:id="@+id/iconResult"
+            android:src="@drawable/snow"
+        android:scaleType="fitXY"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_below="@+id/imageButton2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="41dp" />
+
+        <TextView
+            android:layout_height="80dp"
+            android:text="Partly cloud in Los angeles, CA"
+            android:id="@+id/summaryDetail"
+            android:layout_below="@+id/iconResult"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:maxLines="2"
+            android:textSize="30dp"
+            android:layout_width="wrap_content" />
+
+        <TextView
+            android:layout_height="80dp"
+            android:text="tempdummy"
+            android:id="@+id/tempResult"
+            android:layout_below="@+id/summaryDetail"
+            android:layout_centerHorizontal="true"
+            android:textSize="45dp"
+            android:gravity="center_horizontal"
+            android:maxLines="1"
+            android:layout_width="wrap_content" />
+        <TextView
+            android:layout_height="80dp"
+            android:text="temp dummy"
+            android:layout_toRightOf="@+id/tempResult"
+            android:layout_below="@+id/summaryDetail"
+            android:id="@+id/degreeUnit"
+            android:layout_centerHorizontal="true"
+            android:textSize="15dp"
+            android:maxLines="1"
+            android:layout_width="wrap_content" />
+
+        <TextView
+            android:layout_height="30dp"
+            android:maxLines="1"
+            android:gravity="center_horizontal"
+            android:text="low-high temp dummy"
+            android:id="@+id/lohiTemp"
+            android:layout_below="@+id/tempResult"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:layout_width="wrap_content" />
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lohiTemp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:text="Precipitation" />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:text="     "
+                android:layout_column="1" />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:text="precipDummy"
+                android:id="@+id/precipResult"
+
+                android:gravity="right"
+                android:layout_column="1" />
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:text="Chance of Rain"
+                />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:text="     "
+                android:layout_column="1" />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="right"
+                android:text="CoRDummy"
+                android:id="@+id/chanceOfRainResult" />
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:text="Wind Speed"
+                />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:text="     "
+                android:layout_column="1" />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="right"
+                android:text="WSDummy"
+                android:id="@+id/windSpeedResult" />
+    </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:text="Dew Point"
+                />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:text="     "
+                android:layout_column="1" />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="right"
+                android:text="dewDummy"
+                android:id="@+id/dewResult" />
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:text="Humidity"
+                />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:text="     "
+                android:layout_column="1" />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="right"
+                android:text="humidityDummy"
+                android:id="@+id/humidityResult" />
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:text="Visibility"
+                />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:text="     "
+                android:layout_column="1" />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="right"
+                android:text="visibilityDummy"
+                android:id="@+id/visibilityResult" />
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:text="Sunrise"
+                />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:text="     "
+                android:layout_column="1" />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="right"
+                android:text="sunriseDummy"
+                android:id="@+id/sunriseResult" />
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="left"
+                android:text="Sunset"
+                />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:text="     "
+                android:layout_column="1" />
+            <TextView
+                android:layout_height="30dp"
+                android:maxLines="1"
+                android:textSize="20dp"
+                android:gravity="right"
+                android:text="sunsetDummy"
+                android:id="@+id/sunsetResult" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
